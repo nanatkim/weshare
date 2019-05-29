@@ -7,6 +7,7 @@ import ColorPanel from "./ColorPanel/ColorPanel";
 import SidePanel from "./SidePanel/SidePanel";
 import Messages from "./Messages/Messages";
 import MetaPanel from "./MetaPanel/MetaPanel";
+import Feed from "./Feed/Feed";
 
 const App = ({
     currentUser,
@@ -16,16 +17,12 @@ const App = ({
     primaryColor,
     secondaryColor
 }) => (
-    <Grid
-        columns="equal"
-        className="app"
-        style={{ background: secondaryColor }}
-    >
+    <Grid className="app" style={{ background: secondaryColor }}>
         <Grid.Column width={4}>
-            <ColorPanel
+            {/*<ColorPanel
                 key={currentUser && currentUser.id}
                 currentUser={currentUser}
-            />
+            />*/}
             <SidePanel
                 key={currentUser && currentUser.id}
                 currentUser={currentUser}
@@ -54,8 +51,8 @@ const App = ({
         )}
 
         {currentChannel === null && (
-            <Grid.Column width={8}>
-                <div>Poxa, nenhum canal? Nenhum Amigo?</div>
+            <Grid.Column width={11}>
+                <Feed currentUser={currentUser} />
             </Grid.Column>
         )}
     </Grid>
