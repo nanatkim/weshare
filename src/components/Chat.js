@@ -5,9 +5,8 @@ import { connect } from "react-redux";
 import SidePanel from "./SidePanel/SidePanel";
 import Messages from "./Messages/Messages";
 import MetaPanel from "./MetaPanel/MetaPanel";
-import Feed from "./Feed/Feed";
 
-const App = ({
+const Chat = ({
 	currentUser,
 	currentChannel,
 	isPrivateChannel,
@@ -24,32 +23,22 @@ const App = ({
 				primaryColor={primaryColor}
 			/>
 		</Grid.Column>
-		{currentChannel !== null ? (
-			<React.Fragment>
-				<Grid.Column width={8}>
-					<Messages
-						key={currentChannel && currentChannel.id}
-						currentChannel={currentChannel}
-						currentUser={currentUser}
-						isPrivateChannel={isPrivateChannel}
-					/>
-				</Grid.Column>
-				<Grid.Column width={4}>
-					<MetaPanel
-						key={currentChannel && currentChannel.name}
-						userPosts={userPosts}
-						currentChannel={currentChannel}
-						isPrivateChannel={isPrivateChannel}
-					/>
-				</Grid.Column>
-			</React.Fragment>
-		) : (
-			<React.Fragment>
-				<Grid.Column width={12} style={{ marginLeft: "50px" }}>
-					<Feed currentUser={currentUser} />
-				</Grid.Column>
-			</React.Fragment>
-		)}
+		<Grid.Column width={8}>
+			<Messages
+				key={currentChannel && currentChannel.id}
+				currentChannel={currentChannel}
+				currentUser={currentUser}
+				isPrivateChannel={isPrivateChannel}
+			/>
+		</Grid.Column>
+		<Grid.Column width={4}>
+			<MetaPanel
+				key={currentChannel && currentChannel.name}
+				userPosts={userPosts}
+				currentChannel={currentChannel}
+				isPrivateChannel={isPrivateChannel}
+			/>
+		</Grid.Column>
 	</Grid>
 );
 
@@ -62,4 +51,4 @@ const mapStateToProps = state => ({
 	secondaryColor: state.colors.secondaryColor
 });
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(Chat);
