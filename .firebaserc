@@ -1,5 +1,6 @@
 {
   "projects": {
-    "live": "weshare-info"
+    "live": "weshare-info",
+    "default": "weshare-info"
   }
 }

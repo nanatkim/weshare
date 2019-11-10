@@ -218,7 +218,7 @@ class Channels extends React.Component {
                 <Menu.Menu className="menu">
                     <Menu.Item>
                         <span>
-                            <Icon name="exchange" /> CANAIS
+                            <Icon name="exchange" /> <strong>GRUPOS</strong>
                         </span>{" "}
                         ({channels.length}){" "}
                         <Icon name="add" onClick={this.openModal} />
@@ -228,13 +228,13 @@ class Channels extends React.Component {
 
                 {/* Add Channel Modal */}
                 <Modal basic open={modal} onClose={this.closeModal}>
-                    <Modal.Header>Adicionar Canal</Modal.Header>
+                    <Modal.Header>Adicionar Grupo</Modal.Header>
                     <Modal.Content>
                         <Form onSubmit={this.handleSubmit}>
                             <Form.Field>
                                 <Input
                                     fluid
-                                    label="Nome do Canal"
+                                    label="Nome"
                                     name="channelName"
                                     onChange={this.handleChange}
                                 />
@@ -242,7 +242,7 @@ class Channels extends React.Component {
                             <Form.Field>
                                 <Input
                                     fluid
-                                    label="Sobre o Canal"
+                                    label="Sobre"
                                     name="channelDetails"
                                     onChange={this.handleChange}
                                 />

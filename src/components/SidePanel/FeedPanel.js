@@ -13,7 +13,7 @@ class FeedPanel extends Component {
 			<Menu.Menu className="menu" onClick={() => this.getClick()}>
 				<Menu.Item>
 					<span>
-						<Icon name="columns" /> FEED
+						<Icon name="columns" /> <strong>FEED</strong>
 					</span>
 				</Menu.Item>
 			</Menu.Menu>

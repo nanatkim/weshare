@@ -163,6 +163,7 @@ export default class Tags extends Component {
 				<Segment>
 					<h4>My tags</h4>
 					{myUser &&
+						myUser.tags &&
 						myUser.tags.map(tag => {
 							return (
 								<Label key={tag} color="red" horizontal>

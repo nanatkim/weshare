@@ -186,7 +186,7 @@ export default class Feed extends Component {
 								/>
 							</Form.Field>
 							<Form.Button
-								color="red"
+								color="blue"
 								inverted
 								onClick={this.addComment}
 							>
